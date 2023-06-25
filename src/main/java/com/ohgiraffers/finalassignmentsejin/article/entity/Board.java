@@ -1,4 +1,4 @@
-package com.ohgiraffers.finalassignmentsejin.board.entity;
+package com.ohgiraffers.finalassignmentsejin.article.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +12,6 @@ import javax.persistence.Table;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @ToString
 @Entity
 @Table(name="board")
@@ -23,4 +22,9 @@ public class Board {
     @Column(name = "board_name")
     private String boardName;
     public Board() {}
+    public Board(String boardCode, String boardName) {
+        super();
+        this.boardCode = boardCode;
+        this.boardName = boardName;
+    }
 }

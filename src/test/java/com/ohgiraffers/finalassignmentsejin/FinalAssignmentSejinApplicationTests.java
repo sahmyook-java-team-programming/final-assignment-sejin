@@ -9,5 +9,4 @@ class FinalAssignmentSejinApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }

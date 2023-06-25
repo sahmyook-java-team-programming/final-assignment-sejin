@@ -1,15 +1,13 @@
-package com.ohgiraffers.finalassignmentsejin.board.dto;
+package com.ohgiraffers.finalassignmentsejin.article.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
 @AllArgsConstructor
 public class ArticleDTO implements Serializable {
     private int articleCode;
@@ -17,5 +15,5 @@ public class ArticleDTO implements Serializable {
     private String articleWriter;
     private String articleContext;
     private String articleDate;
-    private int ref_board_code;
+    private int boardCode;
 }

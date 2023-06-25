@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>[[${articleWriter}]]가 작성한 기사 목록</h1>
+    <table>
+        <tr>
+            <th>기사 번호</th>
+            <th>기사 제목</th>
+            <th>기사 작성자</th>
+            <th>기사 내용</th>
+            <th>기사 작성일</th>
+            <th>게시판 코드</th>
+        </tr>
+        <!--메뉴가 여러개니까 tr이 반복되어야 함-->
+        <tr th:each="article : ${articleList}">
+            <th th:text="${article.articleCode}"></th>
+            <th th:text="${article.articleName}"></th>
+            <th th:text="${article.articleWriter}"></th>
+            <th th:text="${article.articleContext}"></th>
+            <th th:text="${article.articleDate}"></th>
+            <th th:text="${article.getBoardCode}"></th>
+        </tr>
+    </table>
+</body>
+</html>

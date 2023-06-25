@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>신규 메뉴 등록</h1>
+    <form action="/article/regist" method="post">
+        <label>기사 제목 : </label><input type="text" name="articleName"><br>
+        <label>기사 작성자 : </label><input type="text" name="articleWriter"><br>
+        <label>기사 내용 : </label><input type="text" name="articleContext"><br>
+        <label>기사 작성일 : </label><input type="text" name="articleDate"><br>
+        <label>게시판 카테고리 : </label>
+        <select name="boardCode" id="boardCode"></select><br>
+        <input type="submit" value="등록">
+    </form>
+
+    <script>
+        fetch('/article/board')
+            .then(res => res.json())
+            .then(data => {
+                const $boardCode = document.getElementById('boardCode');
+                for(let index in data){
+                    const $option = document.createElement('option');
+                    $option.value = data[index].boardCode;
+                    $option.textContent = data[index].boardName;
+                    $boardCode.appendChild($option);
+                }
+            });
+    </script>
+</body>
+</html>

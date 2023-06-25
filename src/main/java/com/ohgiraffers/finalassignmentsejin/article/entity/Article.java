@@ -1,6 +1,5 @@
-package com.ohgiraffers.finalassignmentsejin.board.entity;
+package com.ohgiraffers.finalassignmentsejin.article.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,10 +11,9 @@ import javax.persistence.Table;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @ToString
 @Entity
-@Table(name="artcicle")
+@Table(name="article")
 public class Article {
     @Id
     @Column(name = "article_code")
@@ -28,8 +26,18 @@ public class Article {
     private String articleContext;
     @Column(name = "article_date")
     private String articleDate;
-    @Column(name = "ref_board_code")
-    private int ref_board_code;
+    @Column(name = "board_code")
+    private int boardCode;
 
     public Article() {}
+
+    public Article(int articleCode, String articleName, String articleWriter, String articleContext, String articleDate, int boardCode) {
+        super();
+        this.articleCode = articleCode;
+        this.articleName = articleName;
+        this.articleWriter = articleWriter;
+        this.articleContext = articleContext;
+        this.articleDate = articleDate;
+        this.boardCode = boardCode;
+    }
 }
