@@ -19,6 +19,7 @@ import java.util.List;
 @Slf4j
 @RequestMapping("/article")
 public class ArticleController {
+    // TODO: Spring Security 추가하기
 
     private final ArticleService articleService;
     public ArticleController(ArticleService articleService) {
